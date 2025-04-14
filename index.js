@@ -1,6 +1,12 @@
 const API_KEY = "e123fb0e69e846b58e08642d8e287f52"
 const url = "https://newsapi.org/v2/everything?q="
 
+fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=YOUR_API_KEY', {
+    method: 'GET',
+    headers: {
+        'Upgrade-Insecure-Requests': '1'
+    }
+})
 
 async function fetchData(query){
     const res = await fetch(`${url}${query}&apiKey=${API_KEY}`)
