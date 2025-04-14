@@ -1,14 +1,11 @@
 const API_KEY = "e123fb0e69e846b58e08642d8e287f52"
 const url = "https://newsapi.org/v2/everything?q="
 
-fetch("https://gleeful-praline-44071b.netlify.app/api/everything?q=technology")
+const API_URL = "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=technology&apiKey=e123fb0e69e846b58e08642d8e287f52";
+fetch(API_URL)
   .then(response => response.json())
-  .then(data => console.log(data)) // Kontrollo të dhënat në console
+  .then(data => console.log(data))
   .catch(error => console.error("Gabim:", error));
-
-fetch("https://newsapi.org/v2/:splat?apiKey=e123fb0e69e846b58e08642d8e287f52")
-  .then(response => response.json())
-  .then(data => console.log(data));
 
 async function fetchData(query){
     const res = await fetch(`${url}${query}&apiKey=${API_KEY}`)
